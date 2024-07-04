@@ -42,7 +42,14 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
-    "ckeditor"
+    "ckeditor",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+
+    # providers
+    "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.google",
 ]
 
 MIDDLEWARE = [
@@ -53,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "carzone.urls"
@@ -147,3 +155,4 @@ MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
 
+SITE_ID = 1
